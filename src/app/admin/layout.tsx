@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/sidebar";
 import Sidebar from "./_components/sidebar";
 
-export default function DashboardLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -33,55 +33,55 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-interface MenuItem {
+export interface MenuItem {
   itemsName: string;
   icon: React.ReactNode;
   href: string;
   children?: MenuItem[];
 }
 
-const menuItems: MenuItem[] = [
+export const menuItems: MenuItem[] = [
   {
     itemsName: "Dashboard",
     icon: <LayoutDashboard />,
-    href: "/dashboard",
+    href: "/admin/dashboard",
   },
   {
     itemsName: "Product",
     icon: <Barcode />,
-    href: "/product",
+    href: "/admin/product",
     children: [
       {
         itemsName: "All Products",
         icon: <Barcode />,
-        href: "/product/all",
+        href: "/admin/product/all",
       },
       {
         itemsName: "Add Product",
         icon: <Barcode />,
-        href: "/product/add",
+        href: "/admin/product/add",
       },
     ],
   },
   {
     itemsName: "Account",
     icon: <UserRound />,
-    href: "/account",
+    href: "/admin/account",
   },
   {
     itemsName: "Group 1",
     icon: <LayoutDashboard />,
-    href: "/group1",
+    href: "/admin/group1",
     children: [
       {
         itemsName: "Sub Item 1",
         icon: <Barcode />,
-        href: "/group1/subitem1",
+        href: "/admin/group1/subitem1",
       },
       {
         itemsName: "Sub Item 2",
         icon: <UserRound />,
-        href: "/group1/subitem2",
+        href: "/admin/group1/subitem2",
       },
     ],
   },
@@ -110,8 +110,8 @@ const Sidebar = ({ className }: SidebarProps) => {
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item, index) =>
-                item.children ? (
+              {menuItems.map((item, index) => {
+                return item.children ? (
                   <Collapsible
                     key={index}
                     asChild
@@ -151,8 +151,8 @@ const Sidebar = ({ className }: SidebarProps) => {
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                )
-              )}
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

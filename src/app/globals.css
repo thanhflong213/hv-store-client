@@ -129,6 +129,17 @@
   }
 }
 
-/* div {
-  display: flex;
-} */
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 3s linear infinite;
+}
+

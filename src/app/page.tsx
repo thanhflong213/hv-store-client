@@ -1,7 +1,14 @@
-import Image from "next/image";
+import Carousel from "./(public)/_components/carousel";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 w-full flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start"></main>
+    <main>
+      <section>
+        <Carousel />
+      </section>
+      <section>
+        <div className="h-100"></div>
+      </section>
+    </main>
   );
 }
